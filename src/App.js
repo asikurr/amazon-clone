@@ -10,12 +10,16 @@ import {
   Link
 } from "react-router-dom";
 import NotFound from './components/404/NotFound';
+import ProductDetails from './components/ProductDetails/ProductDetails';
 
 function App() {
   return (
     <Router>
           <TopNavBar/>
         <Switch>
+        <Route path="/product/:productId">
+           <ProductDetails/>       
+       </Route>
         <Route path="/home">
            <Home/>
         </Route>

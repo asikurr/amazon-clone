@@ -2,3 +2,6 @@
     border-bottom: 1px solid #ddd;
     border-right: 1px solid #ddd;
 }
+.product__title{
+    font-weight: 300;
+}

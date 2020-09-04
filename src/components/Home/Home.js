@@ -3,8 +3,8 @@ import './home-style.css'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import Product from '../Product/Product';
 import fakeData from '../../fakeData'
-import { faStreetView } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import Cart from '../Cart/Cart';
 
 const Home = () => {
     const data = fakeData.slice(0, 10)
@@ -34,13 +34,9 @@ const Home = () => {
                 <Col md={3}>
                     <Card>
                         <Card.Body>
-                            <Card.Title>Order Summary</Card.Title>
-                            <p >Total Items : {cart.length}</p>
-                            <p>Total Price : </p>
-                            <p>Shipment Cost : </p>
-                            <p>Tax 8% : </p>
-                            <p>Grand Total : </p>
-                            <button className="btn btn-outline-warning btn-block"><FontAwesomeIcon icon={faStreetView} /> Product Review</button>
+                            {
+                                <Cart cart={cart} />
+                            }
                         </Card.Body>
                     </Card>
                 </Col>
