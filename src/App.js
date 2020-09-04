@@ -11,21 +11,26 @@ import {
 } from "react-router-dom";
 import NotFound from './components/404/NotFound';
 import ProductDetails from './components/ProductDetails/ProductDetails';
+import OrderReview from './components/orderReview/OrderReview';
 
 function App() {
   return (
     <Router>
           <TopNavBar/>
         <Switch>
-        <Route path="/product/:productId">
-           <ProductDetails/>       
-       </Route>
+        
         <Route path="/home">
            <Home/>
         </Route>
         <Route exact path="/">
            <Home/>
         </Route>
+        <Route exact path="/orderriview">
+           <OrderReview/>
+        </Route>
+        <Route exact path="/details/:productId">
+           <ProductDetails/>       
+       </Route>
         <Route path="*">
            <NotFound/>
         </Route>

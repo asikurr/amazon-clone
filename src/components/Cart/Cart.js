@@ -1,7 +1,6 @@
 import React from 'react';
 import './cart-style.css'
-import { faStreetView } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { Card } from 'react-bootstrap';
 
 const Cart = (props) => {
@@ -34,9 +33,9 @@ const Cart = (props) => {
             <p>Shipment Cost : {toFixeds(shipMentCost)}</p>
             <p>Tax 8% : {toFixeds(tax)}</p>
             <p>Grand Total : {toFixeds(grandTotal)}</p>
-            <button
-                className="btn btn-outline-warning btn-block">
-                <FontAwesomeIcon icon={faStreetView} /> Product Review</button>
+            {
+                props.children
+            }
         </>
     );
 };

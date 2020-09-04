@@ -10,11 +10,14 @@ const Product = ({product, handlerAddToCart}) => {
         <div className="product__container d-flex py-3">
             <img className="mr-4 product__img" src={img} alt="" />
             <div className="product__details">
-                 <Link to={`product/${key}`}><h3 className="product__title">{name}</h3></Link> 
+                <h4 className="product__title"> <Link to={`/details/${key}`}>{name}</Link></h4> 
                 <p>By {seller}</p>
                 <p>Price:$ {price}</p>
                 <p>Stock: only {stock} left in stock. order soon</p>
-                <button onClick={()=>handlerAddToCart(product)} className="btn btn-warning"><FontAwesomeIcon icon={faShoppingCart} /> Add to Cart</button>
+                {
+                    handlerAddToCart && <button onClick={()=>handlerAddToCart(product)} className="btn btn-warning"><FontAwesomeIcon icon={faShoppingCart} /> Add to Cart</button>
+                }
+                
             </div>
         </div>
     );

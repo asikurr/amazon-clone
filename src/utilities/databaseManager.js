@@ -29,9 +29,9 @@ const addToDatabaseCart = (key, count) => {
 }
 
 const removeFromDatabaseCart = key => {
-    const currentCart = getDatabaseCart();
-    delete currentCart[key];
-    localStorage.setItem(getDataKey(), JSON.stringify(currentCart));
+  const currentCart = getDatabaseCart();
+  delete currentCart[key];
+  localStorage.setItem(getDataKey(), JSON.stringify(currentCart));
 }
 
 const processOrder = (cart) => {
