@@ -3,13 +3,15 @@ import './orderreview-style.css'
 import { Container, Row, Col } from 'react-bootstrap';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import Cart from '../Cart/Cart';
-import { getDatabaseCart, removeFromDatabaseCart } from '../../utilities/databaseManager';
+import { getDatabaseCart, removeFromDatabaseCart, processOrder } from '../../utilities/databaseManager';
 import fakeData from '../../fakeData';
 import { faStreetView } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import happpyimg from '../../images/giphy.gif'
 
 const OrderReview = () => {
     const [cart, setCart] = useState([]);
+    const [image, setImage] = useState(false)
 
 
 
@@ -43,6 +45,12 @@ const OrderReview = () => {
 
     }
 
+    const placeToOrder = (cartKey) => {
+        setCart([])
+        setImage(happpyimg)
+        processOrder()
+    }
+
     return (
         <Container>
             <Row>
@@ -57,11 +65,15 @@ const OrderReview = () => {
 
                             />)
                     }
+                    {
+                        image && <img src={image} alt=""/> 
+                    }
                 </Col>
 
                 <Col md={3}>
                     <Cart cart={cart}>
                         <button
+                            onClick={() => placeToOrder()}
                             className="btn btn-outline-warning btn-block">
                             <FontAwesomeIcon icon={faStreetView} /> Place Order</button>
                     </Cart>

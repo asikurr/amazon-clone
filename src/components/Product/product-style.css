@@ -5,3 +5,11 @@
 .product__title{
     font-weight: 300;
 }
+
+@media only screen and (max-width:550px){
+    .product__container{
+        display:flex;
+        flex-direction:column;
+        order: 2
+    }
+}
