@@ -8,8 +8,10 @@ import fakeData from '../../fakeData';
 import { faStreetView } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import happpyimg from '../../images/giphy.gif'
+import { useHistory } from 'react-router-dom';
 
 const OrderReview = () => {
+    const history = useHistory();
     const [cart, setCart] = useState([]);
     const [image, setImage] = useState(false)
 
@@ -45,10 +47,8 @@ const OrderReview = () => {
 
     }
 
-    const placeToOrder = (cartKey) => {
-        setCart([])
-        setImage(happpyimg)
-        processOrder()
+    const handleProceedOrder = () => {
+       history.push('/shipment')
     }
 
     return (
@@ -73,9 +73,9 @@ const OrderReview = () => {
                 <Col md={3}>
                     <Cart cart={cart}>
                         <button
-                            onClick={() => placeToOrder()}
+                            onClick={() => handleProceedOrder()}
                             className="btn btn-outline-warning btn-block">
-                            <FontAwesomeIcon icon={faStreetView} /> Place Order</button>
+                            <FontAwesomeIcon icon={faStreetView} /> Proceed Order</button>
                     </Cart>
                 </Col>
             </Row>
