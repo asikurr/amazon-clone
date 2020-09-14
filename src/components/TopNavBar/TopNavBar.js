@@ -20,7 +20,11 @@ const TopNavBar = () => {
                     <NavLink to='/' className="nav-link">Shop</NavLink>
                     <NavLink to='/orderriview' className="nav-link">Order Review</NavLink>
                     <NavLink to='/inventory' className="nav-link">Manage Inventory</NavLink>
-                    <button className="btn btn-warning" onClick={() =>setLoggedInUser({})}>Sign Out</button>
+                    {
+                        loggedInUser.name ?( <button className="btn btn-warning" onClick={() =>setLoggedInUser({})}>{loggedInUser.name} Sign Out</button>)  : 
+                        <Link to="/login"><button className="btn btn-warning">Sign In</button></Link> 
+                    }
+                    
                 </Nav>
 
             </Navbar>

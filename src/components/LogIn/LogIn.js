@@ -7,7 +7,7 @@ import { firebaseInnitializeLogin, googleHandleSignIn, handleSignOut, createUser
 
 function LogIn() {
 
-  
+
   const [isNewUser, setIsNewUser] = useState(false)
   const [user, setUser] = useState({
     isSignedIn: false,
@@ -27,23 +27,23 @@ function LogIn() {
   const history = useHistory();
   let { from } = location.state || { from: { pathname: "/" } };
 
-  const handleResponse = (res, redirect)=>{
+  const handleResponse = (res, redirect) => {
     setUser(res);
     setLoggedInUser(res)
-    if(redirect){
+    if (redirect) {
       history.replace(from)
     }
-  
+
   }
 
   const HandlegoogleSignIn = () => {
-      googleHandleSignIn()
+    googleHandleSignIn()
       .then(res => {
         handleResponse(res, true)
-        })
+      })
   }
   const signOut = () => {
-      handleSignOut()
+    handleSignOut()
       .then(res => {
         handleResponse(res, false)
       })
@@ -83,17 +83,17 @@ function LogIn() {
     // console.log(user.email , user.password)
     if (isNewUser && user.email && user.password) {
       // debugger
-      createUserWithEmailAndPassword(user.name, user.email ,user.password)
-      .then(res => {
-        handleResponse(res, true)
-      })
+      createUserWithEmailAndPassword(user.name, user.email, user.password)
+        .then(res => {
+          handleResponse(res, true)
+        })
     }
 
     if (!isNewUser && user.email && user.password) {
       signInWithEmailAndPassword(user.email, user.password)
-      .then(res => {
-        handleResponse(res, true)
-      })
+        .then(res => {
+          handleResponse(res, true)
+        })
     }
 
     e.preventDefault();
@@ -102,51 +102,58 @@ function LogIn() {
 
 
   return (
-    <div style={{textAlign: 'center'}}>
-      {
-        user.isSignedIn ? <button onClick={signOut}>Sign Out</button> :
-          <button onClick={HandlegoogleSignIn}>Sign In With Google</button>
-      }
+
+    <div className="container">
+      <div className="row justify-content-md-center">
+        <div style={{ textAlign: 'center' }} col-md={6}>
+          {
+            user.isSignedIn ? <button className="btn btn-outline-warning my-1" onClick={signOut}>Sign Out</button> :
+              <button className="btn btn-outline-primary my-1" onClick={HandlegoogleSignIn}>Sign In With Google</button>
+          }
 
 
-      {
-        user.isSignedIn && (
-          <div>
-            <h4>Name is : {user.name}</h4>
-            <p>Email is : {user.email}</p>
-            <img src={user.photo} alt="user img" />
-          </div>
-        )
-      }
+          {
+            user.isSignedIn && (
+              <div>
+                <h4>Name is : {user.name}</h4>
+                <p>Email is : {user.email}</p>
+                <img src={user.photo} alt="user img" />
+              </div>
+            )
+          }
 
-      <h1>Our Own Authentication</h1>
-      {/* <p>Name is : {user.name}</p>
+          <h1>Our Own Authentication</h1>
+          {/* <p>Name is : {user.name}</p>
       <p>Email is : {user.email}</p>
       <p>Password is : {user.password}</p> */}
-      <p style={{ color: 'red' }}>{user.error}</p>
-      {
-        user.success && <p style={{ color: 'green' }}>Account {isNewUser ? 'Create' : 'Login'} Successfully</p>
+          <p style={{ color: 'red' }}>{user.error}</p>
+          {
+            user.success && <p style={{ color: 'green' }}>Account {isNewUser ? 'Create' : 'Login'} Successfully</p>
 
-      }
-      <input type="checkbox" onClick={() => setIsNewUser(!isNewUser)} name="isNewUser" id="" />
-      <label htmlFor="isNewUser">New User SignUp</label>
-      <form onSubmit={handleSubmit} >
-        {
-          isNewUser && <input type="text" name="name" onBlur={handleChange} placeholder="Name" id="name" required />
-        }
-        <br />
-        <input type="text" name="email" onBlur={handleChange} placeholder="Email" id="email" required /><br />
-        <input type="password" name="password" onBlur={handleChange} placeholder="Password" id="password" required /><br />
+          }
+          <input type="checkbox" onClick={() => setIsNewUser(!isNewUser)} name="isNewUser" id="" />
+          <label htmlFor="isNewUser">New User SignUp</label>
+          <form onSubmit={handleSubmit} className="form-group" >
+            {
+              isNewUser && <input className="form-control" type="text" name="name" onBlur={handleChange} placeholder="Name" id="name" required />
+            }
+            <br />
+            <input className="form-control" type="text" name="email" onBlur={handleChange} placeholder="Email" id="email" required /><br />
+            <input className="form-control" type="password" name="password" onBlur={handleChange} placeholder="Password" id="password" required /><br />
 
-        {
-          isNewUser ? <input type="submit" value="Sign Up" /> : <input type="submit" value="Log In" />
-        }
+            {
+              isNewUser ? <input className="btn btn-outline-primary" type="submit" value="Sign Up" /> : <input type="submit" className="btn btn-primary" value="Log In" />
+            }
 
 
 
-      </form>
+          </form>
 
+        </div>
+
+      </div>
     </div>
+
   );
 }
 

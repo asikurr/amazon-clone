@@ -7,13 +7,12 @@ import { getDatabaseCart, removeFromDatabaseCart, processOrder } from '../../uti
 import fakeData from '../../fakeData';
 import { faStreetView } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import happpyimg from '../../images/giphy.gif'
 import { useHistory } from 'react-router-dom';
 
 const OrderReview = () => {
     const history = useHistory();
     const [cart, setCart] = useState([]);
-    const [image, setImage] = useState(false)
+    // const [image, setImage] = useState(false)
 
 
 
@@ -65,9 +64,9 @@ const OrderReview = () => {
 
                             />)
                     }
-                    {
+                    {/* {
                         image && <img src={image} alt=""/> 
-                    }
+                    } */}
                 </Col>
 
                 <Col md={3}>

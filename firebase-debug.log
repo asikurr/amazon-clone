@@ -1,0 +1,160 @@
+[debug] [2020-09-13T07:41:47.358Z] ----------------------------------------------------------------------
+[debug] [2020-09-13T07:41:47.362Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Md Asikur Rahaman\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-09-13T07:41:47.362Z] CLI Version:   8.9.2
+[debug] [2020-09-13T07:41:47.362Z] Platform:      win32
+[debug] [2020-09-13T07:41:47.363Z] Node Version:  v12.16.0
+[debug] [2020-09-13T07:41:47.373Z] Time:          Sun Sep 13 2020 13:41:47 GMT+0600 (Bangladesh Standard Time)
+[debug] [2020-09-13T07:41:47.373Z] ----------------------------------------------------------------------
+[debug] [2020-09-13T07:41:47.373Z] 
+[debug] [2020-09-13T07:41:47.389Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-13T07:41:47.390Z] > authorizing via signed-in user
+[debug] [2020-09-13T07:41:47.390Z] [iam] checking project site-clone-50c97 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-09-13T07:41:47.392Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-09-13T07:41:47.392Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-09-13T07:42:08.521Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2020-09-13T07:42:08.524Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-09-13T07:42:08.525Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-09-13T07:42:29.546Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2020-09-13T07:42:29.551Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at Object.<anonymous> (C:\Users\Md Asikur Rahaman\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:23:32)
+    at Module._compile (internal/modules/cjs/loader.js:1157:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1177:10)
+    at Module.load (internal/modules/cjs/loader.js:1001:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:900:14)
+    at Module.require (internal/modules/cjs/loader.js:1043:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at Object.<anonymous> (C:\Users\Md Asikur Rahaman\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\login.js:20:14)
+    at Module._compile (internal/modules/cjs/loader.js:1157:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1177:10)
+    at Module.load (internal/modules/cjs/loader.js:1001:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:900:14)
+    at Module.require (internal/modules/cjs/loader.js:1043:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at loadCommand (C:\Users\Md Asikur Rahaman\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\index.js:5:19)
+    at module.exports (C:\Users\Md Asikur Rahaman\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\index.js:89:20)
+[error] 
+[error] Error: Failed to get Firebase project site-clone-50c97. Please make sure the project exists and your account has permission to access it.
+[debug] [2020-09-13T07:42:47.147Z] ----------------------------------------------------------------------
+[debug] [2020-09-13T07:42:47.150Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Md Asikur Rahaman\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2020-09-13T07:42:47.150Z] CLI Version:   8.9.2
+[debug] [2020-09-13T07:42:47.150Z] Platform:      win32
+[debug] [2020-09-13T07:42:47.150Z] Node Version:  v12.16.0
+[debug] [2020-09-13T07:42:47.151Z] Time:          Sun Sep 13 2020 13:42:47 GMT+0600 (Bangladesh Standard Time)
+[debug] [2020-09-13T07:42:47.152Z] ----------------------------------------------------------------------
+[debug] [2020-09-13T07:42:47.152Z] 
+[debug] [2020-09-13T07:42:47.159Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-13T07:42:47.160Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Web Development\React\amazon-self
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using site-clone-50c97. 
+[debug] [2020-09-13T07:42:59.077Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-09-13T07:42:59.078Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-09-13T07:43:20.135Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2020-09-13T07:43:20.140Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at Object.<anonymous> (C:\Users\Md Asikur Rahaman\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:23:32)
+    at Module._compile (internal/modules/cjs/loader.js:1157:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1177:10)
+    at Module.load (internal/modules/cjs/loader.js:1001:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:900:14)
+    at Module.require (internal/modules/cjs/loader.js:1043:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at Object.<anonymous> (C:\Users\Md Asikur Rahaman\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\login.js:20:14)
+    at Module._compile (internal/modules/cjs/loader.js:1157:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1177:10)
+    at Module.load (internal/modules/cjs/loader.js:1001:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:900:14)
+    at Module.require (internal/modules/cjs/loader.js:1043:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at loadCommand (C:\Users\Md Asikur Rahaman\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\index.js:5:19)
+    at module.exports (C:\Users\Md Asikur Rahaman\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\index.js:89:20)
+[error] 
+[error] Error: Failed to get Firebase project site-clone-50c97. Please make sure the project exists and your account has permission to access it.
+[debug] [2020-09-13T07:43:56.946Z] ----------------------------------------------------------------------
+[debug] [2020-09-13T07:43:56.948Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Md Asikur Rahaman\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2020-09-13T07:43:56.948Z] CLI Version:   8.9.2
+[debug] [2020-09-13T07:43:56.949Z] Platform:      win32
+[debug] [2020-09-13T07:43:56.949Z] Node Version:  v12.16.0
+[debug] [2020-09-13T07:43:56.950Z] Time:          Sun Sep 13 2020 13:43:56 GMT+0600 (Bangladesh Standard Time)
+[debug] [2020-09-13T07:43:56.950Z] ----------------------------------------------------------------------
+[debug] [2020-09-13T07:43:56.950Z] 
+[debug] [2020-09-13T07:43:56.957Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-13T07:43:56.958Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Web Development\React\amazon-self
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using site-clone-50c97. 
+[debug] [2020-09-13T07:44:17.004Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-09-13T07:44:17.005Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-09-13T07:44:17.407Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 13 Sep 2020 07:44:14 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-13T07:44:17.422Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/site-clone-50c97  
+ 
+[debug] [2020-09-13T07:44:38.586Z] Server Error. connect ETIMEDOUT 74.125.24.95:443
+[debug] [2020-09-13T07:44:38.592Z] FirebaseError: Server Error. connect ETIMEDOUT 74.125.24.95:443
+    at Request._callback (C:\Users\Md Asikur Rahaman\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:32:31)
+    at self.callback (C:\Users\Md Asikur Rahaman\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:321:20)
+    at Request.EventEmitter.emit (domain.js:482:12)
+    at Request.onRequestError (C:\Users\Md Asikur Rahaman\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:877:8)
+    at ClientRequest.emit (events.js:333:22)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at TLSSocket.socketErrorListener (_http_client.js:426:9)
+    at TLSSocket.emit (events.js:321:20)
+    at TLSSocket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+[error] 
+[error] Error: Failed to get Firebase project site-clone-50c97. Please make sure the project exists and your account has permission to access it.
