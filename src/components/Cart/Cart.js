@@ -5,7 +5,7 @@ import { Card } from 'react-bootstrap';
 
 const Cart = (props) => {
     const cart = props.cart;
-    const total = cart.reduce((price, cart) => price + cart.price * cart.quantity, 0);
+    const total = cart.reduce((price, cart) => price + cart.price * cart.quantity || 1, 0);
     // debugger;
     // console.log(total)
 

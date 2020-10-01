@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './home-style.css'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import Product from '../Product/Product';
-import fakeData from '../../fakeData'
 import { faStreetView } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -11,10 +10,17 @@ import { Link } from 'react-router-dom';
 import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
 
 const Home = () => {
-    const data = fakeData.slice(0, 10)
-    const [products, setProducts] = useState(data);
+    // const data = fakeData.slice(0, 10)
+    const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([])
     // console.log(products)
+
+    useEffect(() => {
+        fetch('https://infinite-crag-48388.herokuapp.com/getProducts')
+        .then(res => res.json())
+        .then(data => setProducts(data))
+    }, [])
+
     const handlerAddToCart = (product) => {
         // console.log("cart clicked.", product)
 
@@ -40,15 +46,24 @@ const Home = () => {
     useEffect(()=>{
        const saveCart = getDatabaseCart();
        const productKey = Object.keys(saveCart)
-       const cartProduct = productKey.map(key =>{
-           const product = fakeData.find(data => data.key === key)
-           product.quantity = saveCart[key];
-           return product;
-       })
+    //    console.log(productKey, products)
+    //    if (products.length){
+    //        const cartProduct = productKey.map(key => {
+    //            const product = products.find(data => data.key === key)
+    //            product.quantity = saveCart[key];
+    //            return product;
+    //        })
+    //        setCart(cartProduct)
+    //    }
+        fetch('https://infinite-crag-48388.herokuapp.com/productByKeys', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(productKey)
+        })
+            .then(response => response.json())
+            .then(data => setCart(data))
 
-       setCart(cartProduct)
-       
-    },[])
+    }, [])
 
     return (
         <Container fluid>

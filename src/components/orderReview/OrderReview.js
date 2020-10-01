@@ -4,7 +4,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import Cart from '../Cart/Cart';
 import { getDatabaseCart, removeFromDatabaseCart, processOrder } from '../../utilities/databaseManager';
-import fakeData from '../../fakeData';
 import { faStreetView } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useHistory } from 'react-router-dom';
@@ -19,14 +18,22 @@ const OrderReview = () => {
     useEffect(() => {
         const saveCart = getDatabaseCart();
         const dataKey = Object.keys(saveCart);
-        const cartProduct = dataKey.map(key => {
-            const product = fakeData.find(pd => pd.key === key);
-            product.quantity = saveCart[key]
-            // console.log(product);
-            return product;
-
+        // console.log(dataKey)
+        fetch('https://infinite-crag-48388.herokuapp.com/productByKeys', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify(dataKey)
         })
-        setCart(cartProduct);
+        .then(response => response.json())
+        .then(data => setCart(data))
+        // const cartProduct = dataKey.map(key => {
+        //     const product = fakeData.find(pd => pd.key === key);
+        //     product.quantity = saveCart[key]
+        //     // console.log(product);
+        //     return product;
+
+        // })
+        // setCart(cartProduct);
 
     }, [])
 

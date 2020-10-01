@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 
 import { userContext } from '../../App';
 import { useLocation, useHistory } from 'react-router-dom';
-import { firebaseInnitializeLogin, googleHandleSignIn, handleSignOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from './firebaseManager';
+import { firebaseInnitializeLogin, googleHandleSignIn, handleSignOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, resetPassword } from './firebaseManager';
 
 
 function LogIn() {
@@ -148,6 +148,7 @@ function LogIn() {
 
 
           </form>
+           <button onClick={() => resetPassword(user.email) }className="btn btn-warning">Forget Password</button>
 
         </div>
 
