@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Loader from 'react-loader-spinner'
 import './home-style.css'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import Product from '../Product/Product';
@@ -13,13 +14,18 @@ const Home = () => {
     // const data = fakeData.slice(0, 10)
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([])
+    const [searchData, setSearchData] = useState('')
     // console.log(products)
 
     useEffect(() => {
-        fetch('https://infinite-crag-48388.herokuapp.com/getProducts')
+        fetch('https://infinite-crag-48388.herokuapp.com/getProducts?search='+searchData)
         .then(res => res.json())
         .then(data => setProducts(data))
-    }, [])
+    }, [searchData])
+
+    const handleSearch = event => {
+        setSearchData(event.target.value)
+    }
 
     const handlerAddToCart = (product) => {
         // console.log("cart clicked.", product)
@@ -65,10 +71,18 @@ const Home = () => {
 
     }, [])
 
+  
+
     return (
         <Container fluid>
+            <input type="text" onChange={handleSearch} className="form-control" placeholder="Search Product" />
             <Row>
                 <Col md={9}>
+
+                    {
+                        products.length === 0 && 
+                        <p className="spinning"><Loader type="Oval" color="#00BFFF" height={80} width={80} /></p>
+                    }
                     {
                         products.map(product =>
                             <Product

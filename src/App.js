@@ -15,6 +15,7 @@ import LogIn from './components/LogIn/LogIn'
 import Shipment from './components/Shipment/Shipment'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import ManageInventory from './components/ManageInventory/ManageInventory';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 export const userContext = createContext()
 function App() {
